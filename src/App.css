@@ -4,7 +4,8 @@ body {
 }
 
 #header {
-  padding: 8px 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 #header .header-wrapper {
   display: flex;
@@ -25,7 +26,26 @@ body {
   text-decoration: none;
 }
 #header .header-wrapper .header__title {
+  font-size: 26px;
   margin: 0;
+  text-transform: uppercase;
+}
+
+.country-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.country-list__header__title {
+  font-size: 24px;
+}
+.country-list__header__input {
+  padding: 4px 8px;
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
 }
 
 .country-card {
