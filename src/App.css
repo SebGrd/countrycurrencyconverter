@@ -1,6 +1,6 @@
 body {
   background-color: #282c34;
-  color: white;
+  color: #d8dede;
 }
 
 #header {
@@ -21,7 +21,7 @@ body {
   margin-left: 15px;
 }
 #header .header-wrapper .header__menu__item__link {
-  color: white;
+  color: #d8dede;
   text-decoration: none;
 }
 #header .header-wrapper .header__title {
@@ -30,23 +30,49 @@ body {
 
 .country-card {
   margin-bottom: 40px;
+  border-bottom: 1px solid #3e4451;
 }
-.country-card__img {
+.country-card__link {
+  display: block;
+  padding-bottom: 8px;
+  color: #d8dede;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+.country-card__link:hover {
+  background: #333842;
+}
+.country-card__img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3e4451;
+  height: 115px;
+}
+.country-card__img-wrapper__img {
   max-width: 100%;
+  max-height: 100%;
   height: auto;
 }
 .country-card__title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 4px;
+  margin-top: 6px;
+  text-align: center;
 }
-.country-card__badge {
+.country-card__badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.country-card__badges__badge {
   display: inline-block;
   font-size: 14px;
-  background: dimgrey;
+  background: #3e4451;
   border-radius: 6px;
   padding: 4px 8px;
-  margin-right: 8px;
+  margin: 4px 8px 4px 0;
 }
 
 /*# sourceMappingURL=App.css.map */

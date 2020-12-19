@@ -1,8 +1,27 @@
+$bg-color: #282c34;
+$light-dark: lighten($bg-color, 10%);
+$text-light: #d8dede;
+
+// breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$breakpoints: (
+        "sm": $sm,
+        "md": $md,
+        "lg": $lg,
+        "xl": $xl
+) !default;
+
+
+
 body {
   background-color: #282c34;
-  color: white;
+  color: $text-light;
 }
 
+// Header
 #header{
   padding: 8px 0;
   .header-wrapper{
@@ -18,7 +37,7 @@ body {
         &__item{
           margin-left: 15px;
           &__link{
-            color: white;
+            color: $text-light;
             text-decoration: none;
           }
         }
@@ -30,23 +49,50 @@ body {
   }
 }
 
+// Country List
 .country-card{
   margin-bottom: 40px;
-  &__img{
-    max-width: 100%;
-    height: auto;
+  border-bottom: 1px solid $light-dark;
+  &__link{
+    display: block;
+    padding-bottom: 8px;
+    color: $text-light;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+    &:hover{
+      background: lighten($bg-color, 5%);
+    }
+  }
+  &__img-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $light-dark;
+    height: 115px;
+    &__img{
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+    }
   }
   &__title{
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 4px;
+    margin-top: 6px;
+    text-align: center;
   }
-  &__badge{
-    display: inline-block;
-    font-size: 14px;
-    background: dimgrey;
-    border-radius: 6px;
-    padding: 4px 8px;
-    margin-right: 8px;
+  &__badges{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__badge{
+      display: inline-block;
+      font-size: 14px;
+      background: $light-dark;
+      border-radius: 6px;
+      padding: 4px 8px;
+      margin: 4px 8px 4px 0;
+    }
   }
 }
