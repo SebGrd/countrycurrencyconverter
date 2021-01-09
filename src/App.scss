@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+
+$primary: #9547ea;
 $bg-color: #282c34;
 $light-dark: lighten($bg-color, 10%);
 $text-light: #d8dede;
@@ -19,6 +22,8 @@ $breakpoints: (
 body {
   background-color: #282c34;
   color: $text-light;
+  font-family: 'Nunito', sans-serif;
+
 }
 
 // Header
@@ -29,6 +34,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid $primary;
     .header{
       &__menu{
         display: flex;
@@ -40,6 +46,10 @@ body {
           &__link{
             color: $text-light;
             text-decoration: none;
+            &.active{
+              color: $primary;
+              font-weight: 600;
+            }
           }
         }
       }
@@ -117,4 +127,73 @@ body {
       margin: 4px 8px 4px 0;
     }
   }
+}
+
+.country{
+  &__header{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    &__title{
+      margin-top: 0;
+      &__name{
+        position: relative;
+        font-size: 50px;
+        font-weight: 600;
+        &:after{
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 100%;
+          width: 70%;
+          height: 4px;
+          border-radius: 10px;
+          background: linear-gradient(to right, white 50%, $bg-color);
+        }
+      }
+      &__info{
+        margin-left: 30px;
+        font-size: 18px;
+        > * {
+          font-weight: 400;
+          margin-right: 15px;
+        }
+      }
+    }
+    &__flag-wrapper{
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      z-index: -4;
+      max-width: 70vw;
+      pointer-events: none;
+      &:before{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 15%;
+        background: linear-gradient(90deg, $bg-color 10%, transparent);
+        z-index: 1;
+      }
+      img{
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        opacity: 0.1;
+      }
+    }
+  }
+}
+
+// Utils
+.badge{
+  display: inline-block;
+  font-size: 14px;
+  background: $light-dark;
+  border-radius: 6px;
+  padding: 4px 8px;
 }

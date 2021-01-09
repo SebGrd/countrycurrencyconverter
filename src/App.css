@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
 body {
   background-color: #282c34;
   color: #d8dede;
+  font-family: "Nunito", sans-serif;
 }
 
 #header {
@@ -11,6 +13,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid #9547ea;
 }
 #header .header-wrapper .header__menu {
   display: flex;
@@ -24,6 +27,10 @@ body {
 #header .header-wrapper .header__menu__item__link {
   color: #d8dede;
   text-decoration: none;
+}
+#header .header-wrapper .header__menu__item__link.active {
+  color: #9547ea;
+  font-weight: 600;
 }
 #header .header-wrapper .header__title {
   font-size: 26px;
@@ -93,6 +100,72 @@ body {
   border-radius: 6px;
   padding: 4px 8px;
   margin: 4px 8px 4px 0;
+}
+
+.country__header {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.country__header__title {
+  margin-top: 0;
+}
+.country__header__title__name {
+  position: relative;
+  font-size: 50px;
+  font-weight: 600;
+}
+.country__header__title__name:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 100%;
+  width: 70%;
+  height: 4px;
+  border-radius: 10px;
+  background: linear-gradient(to right, white 50%, #282c34);
+}
+.country__header__title__info {
+  margin-left: 30px;
+  font-size: 18px;
+}
+.country__header__title__info > * {
+  font-weight: 400;
+  margin-right: 15px;
+}
+.country__header__flag-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: -4;
+  max-width: 70vw;
+  pointer-events: none;
+}
+.country__header__flag-wrapper:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15%;
+  background: linear-gradient(90deg, #282c34 10%, transparent);
+  z-index: 1;
+}
+.country__header__flag-wrapper img {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  opacity: 0.1;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 14px;
+  background: #3e4451;
+  border-radius: 6px;
+  padding: 4px 8px;
 }
 
 /*# sourceMappingURL=App.css.map */

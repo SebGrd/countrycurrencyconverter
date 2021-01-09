@@ -20,19 +20,28 @@ function SearchInput({setFilteredCountryData, countryData}) {
     }
 
     return (
-        <input className="country-list__header__input" type="text" onChange={handleChange}/>
+        <input className="country-list__header__input" type="text" onChange={handleChange} placeholder="Search..."/>
     )
 }
 
 export default function CountryList() {
     let [countryData, setCountryData] = useState([])
+    let [loading, setLoading] = useState(false)
     let [filteredCountryData, setFilteredCountryData] = useState([])
 
     useEffect(() => {
         const fetchData = () => {
+            setLoading(true)
             fetch('https://restcountries.eu/rest/v2/all')
                 .then(res => res.json())
-                .then(data => setCountryData(data))
+                .then(data => {
+                    setLoading(false)
+                    setCountryData(data)
+                })
+                .catch(e => {
+                    console.log(e)
+                    setLoading(false)
+                })
         }
         fetchData()
     }, [])
@@ -47,6 +56,9 @@ export default function CountryList() {
                         countryData={countryData}
                     />
                 </div>
+                {loading &&
+                    <img src="/loading.gif" alt="loading"/>
+                }
                 <div className="row">
                     {filteredCountryData?.map(({name, alpha2Code, region, currencies, flag}) =>
                         <CountryCard

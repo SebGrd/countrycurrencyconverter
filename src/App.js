@@ -1,9 +1,11 @@
-import './style/boostrap.css';
+import './style/boostrip.css';
 import './App.css';
 
 import Header from "./components/Header";
 
 import getView from "./Route";
+
+
 
 
 function App() {

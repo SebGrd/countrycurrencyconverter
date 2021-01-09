@@ -5,10 +5,9 @@ export default function Header() {
         <header>
             <div className="container" id="header">
                 <div className="header-wrapper">
-                    <h1 className="header__title">Country Currency Converter</h1>
+                    <h1 className="header__title">Currency Converter</h1>
                     <HeaderMenu/>
                 </div>
-                <hr/>
             </div>
         </header>
     )
