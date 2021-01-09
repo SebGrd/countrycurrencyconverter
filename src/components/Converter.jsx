@@ -7,13 +7,14 @@ function BaseValueInput({setBaseValue}) {
     }
 
     return (
-        <input className="input" type="number" min="0" defaultValue={1} onChange={handleChange} placeholder="..."/>
+        <input className="input" type="number" min="0" defaultValue={1} onChange={handleChange} placeholder="24..."/>
     )
 }
 
 function Currency({code}) {
     let [currencyData, setCurrencyData] = useState({});
     let [baseValue, setBaseValue] = useState(1);
+    let [secondValue, setSecondValue] = useState(1);
     window.localStorage.setItem('currency', 'EUR')
     let defaultCurrency = window.localStorage.getItem('currency');
     let from = defaultCurrency ? defaultCurrency : 'USD'
@@ -37,6 +38,8 @@ function Currency({code}) {
         <div className="converter__currency">
             <p><span className="badge">{from}</span>→<span className="badge">{code}</span></p>
             <p><BaseValueInput setBaseValue={setBaseValue}/> {from} → {Math.round((baseValue * multiplier) * 1000) / 1000} {code}</p>
+            <p><span className="badge">{code}</span>→<span className="badge">{from}</span></p>
+            <p><BaseValueInput setBaseValue={setSecondValue}/> {code} → {Math.round((secondValue / multiplier) * 1000) / 1000} {from}</p>
 
         </div>
     )
