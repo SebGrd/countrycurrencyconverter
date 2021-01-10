@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from "react";
 
 function BaseValueInput({setBaseValue}) {
-
     const handleChange = (event) => {
         setBaseValue(event.target.value)
     }
-
     return (
-        <input className="input" type="number" min="0" defaultValue={1} onChange={handleChange} placeholder="24..."/>
+        <input className="converter__currency__input__input" type="number" min="0" defaultValue={1}
+               onChange={handleChange} placeholder="24..."/>
     )
 }
 
@@ -35,15 +34,37 @@ function Currency({code}) {
     let multiplier = conversionValue?.val
 
     return (
-        <div className="converter__currency">
-            <p><span className="badge">{defaultCurrency}</span>→<span className="badge">{code}</span></p>
-            <p><BaseValueInput setBaseValue={setFirstValue}/>
-                {defaultCurrency} → {Math.round((firstValue * multiplier) * 1000) / 1000} {code}
-            </p>
-            <p><span className="badge">{code}</span>→<span className="badge">{defaultCurrency}</span></p>
-            <p><BaseValueInput setBaseValue={setSecondValue}/>
-                {code} → {Math.round((secondValue / multiplier) * 1000) / 1000} {defaultCurrency}
-            </p>
+        <div className="converter">
+            <article className="converter__currency">
+                <p className="converter__currency__title">
+                    <span className="badge">{defaultCurrency}</span>
+                    <span className="converter__currency__title__arrow">→</span>
+                    <span className="badge">{code}</span>
+                </p>
+                <div className="converter__currency__input">
+                    <BaseValueInput setBaseValue={setFirstValue}/>
+                    <span className="converter__currency__input__code">{defaultCurrency}</span>
+                </div>
+                <div className="converter__currency__arrow">→</div>
+                <div className="converter__currency__result">
+                    {Math.round((firstValue * multiplier) * 1000) / 1000} {code}
+                </div>
+            </article>
+            <article className="converter__currency">
+                <p className="converter__currency__title">
+                    <span className="badge">{code}</span>
+                    <span className="converter__currency__title__arrow">→</span>
+                    <span className="badge">{defaultCurrency}</span>
+                </p>
+                <div className="converter__currency__input">
+                    <BaseValueInput setBaseValue={setSecondValue}/>
+                    <span className="converter__currency__input__code">{code}</span>
+                </div>
+                <div className="converter__currency__arrow">→</div>
+                <div className="converter__currency__result">
+                    {Math.round((secondValue / multiplier) * 1000) / 1000} {defaultCurrency}
+                </div>
+            </article>
         </div>
     )
 }
