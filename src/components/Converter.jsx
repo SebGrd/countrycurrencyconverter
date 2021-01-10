@@ -35,6 +35,7 @@ function Currency({code}) {
 
     return (
         <div className="converter">
+            <h3 className="converter__title">{code}</h3>
             <article className="converter__currency">
                 <p className="converter__currency__title">
                     <span className="badge">{defaultCurrency}</span>

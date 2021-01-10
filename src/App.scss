@@ -193,6 +193,9 @@ body {
   margin-bottom: 50px;
   border-left: 6px solid $primary;
   padding-left: 15px;
+  &__title{
+    font-size: 35px;
+  }
   &__currency{
     &__title{
       &__arrow{
@@ -212,11 +215,15 @@ body {
         margin-right: 4px;
         padding: 4px 8px;
         font-size: 20px;
-        width: 100px;
+        width: 150px;
         background: $bg-color;
         color: $text-light;
         border: 2px solid $light-dark;
         border-radius: 15px;
+        outline: none;
+        &:active, &:focus{
+          border-color: $primary;
+        }
       }
     }
     &__arrow{

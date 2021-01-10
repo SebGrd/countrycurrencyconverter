@@ -165,6 +165,9 @@ body {
   border-left: 6px solid #9547ea;
   padding-left: 15px;
 }
+.converter__title {
+  font-size: 35px;
+}
 .converter__currency__title__arrow {
   margin: 0 6px;
   font-size: 20px;
@@ -180,11 +183,15 @@ body {
   margin-right: 4px;
   padding: 4px 8px;
   font-size: 20px;
-  width: 100px;
+  width: 150px;
   background: #282c34;
   color: #d8dede;
   border: 2px solid #3e4451;
   border-radius: 15px;
+  outline: none;
+}
+.converter__currency__input__input:active, .converter__currency__input__input:focus {
+  border-color: #9547ea;
 }
 .converter__currency__arrow {
   font-size: 30px;
