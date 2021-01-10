@@ -41,13 +41,15 @@ function Currency({code}) {
                     <span className="converter__currency__title__arrow">→</span>
                     <span className="badge">{code}</span>
                 </p>
-                <div className="converter__currency__input">
-                    <BaseValueInput setBaseValue={setFirstValue}/>
-                    <span className="converter__currency__input__code">{defaultCurrency}</span>
-                </div>
-                <div className="converter__currency__arrow">→</div>
-                <div className="converter__currency__result">
-                    {Math.round((firstValue * multiplier) * 1000) / 1000} {code}
+                <div className="converter__currency__wrapper">
+                    <div className="converter__currency__input">
+                        <BaseValueInput setBaseValue={setFirstValue}/>
+                        <span className="converter__currency__input__code">{defaultCurrency}</span>
+                    </div>
+                    <div className="converter__currency__arrow">→</div>
+                    <div className="converter__currency__result">
+                        {Math.round((firstValue * multiplier) * 1000) / 1000} {code}
+                    </div>
                 </div>
             </article>
             <article className="converter__currency">
@@ -56,13 +58,15 @@ function Currency({code}) {
                     <span className="converter__currency__title__arrow">→</span>
                     <span className="badge">{defaultCurrency}</span>
                 </p>
-                <div className="converter__currency__input">
-                    <BaseValueInput setBaseValue={setSecondValue}/>
-                    <span className="converter__currency__input__code">{code}</span>
-                </div>
-                <div className="converter__currency__arrow">→</div>
-                <div className="converter__currency__result">
-                    {Math.round((secondValue / multiplier) * 1000) / 1000} {defaultCurrency}
+                <div className="converter__currency__wrapper">
+                    <div className="converter__currency__input">
+                        <BaseValueInput setBaseValue={setSecondValue}/>
+                        <span className="converter__currency__input__code">{code}</span>
+                    </div>
+                    <div className="converter__currency__arrow">→</div>
+                    <div className="converter__currency__result">
+                        {Math.round((secondValue / multiplier) * 1000) / 1000} {defaultCurrency}
+                    </div>
                 </div>
             </article>
         </div>
@@ -73,13 +77,13 @@ export default function Converter({currencies}) {
     let codes = currencies?.map(({code}) => code)
 
     return (
-        <div className="converter">
+        <section className="converter-section">
             <h2>Converter</h2>
             {codes?.map((code) => {
                     if (code === '(none)' || code === null) return null
                     return <Currency key={`${code}`} code={code}/>
                 }
             )}
-        </div>
+        </section>
     )
 }

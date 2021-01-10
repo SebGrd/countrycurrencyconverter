@@ -189,6 +189,45 @@ body {
   }
 }
 
+.converter{
+  margin-bottom: 50px;
+  border-left: 6px solid $primary;
+  padding-left: 15px;
+  &__currency{
+    &__title{
+      &__arrow{
+        margin: 0 6px;
+        font-size: 20px;
+      }
+    }
+    &__wrapper{
+      display: flex;
+      align-items: center;
+    }
+    &__input{
+      &__code{
+        font-weight: 600;
+      }
+      &__input {
+        margin-right: 4px;
+        padding: 4px 8px;
+        font-size: 20px;
+        width: 100px;
+        background: $bg-color;
+        color: $text-light;
+        border: 2px solid $light-dark;
+        border-radius: 15px;
+      }
+    }
+    &__arrow{
+      font-size: 30px;
+      margin: 0 10px;
+    }
+    &__result{
+      font-size: 30px;
+    }
+  }
+}
 // Utils
 .badge{
   display: inline-block;

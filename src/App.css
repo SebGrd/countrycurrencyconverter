@@ -160,6 +160,40 @@ body {
   opacity: 0.1;
 }
 
+.converter {
+  margin-bottom: 50px;
+  border-left: 6px solid #9547ea;
+  padding-left: 15px;
+}
+.converter__currency__title__arrow {
+  margin: 0 6px;
+  font-size: 20px;
+}
+.converter__currency__wrapper {
+  display: flex;
+  align-items: center;
+}
+.converter__currency__input__code {
+  font-weight: 600;
+}
+.converter__currency__input__input {
+  margin-right: 4px;
+  padding: 4px 8px;
+  font-size: 20px;
+  width: 100px;
+  background: #282c34;
+  color: #d8dede;
+  border: 2px solid #3e4451;
+  border-radius: 15px;
+}
+.converter__currency__arrow {
+  font-size: 30px;
+  margin: 0 10px;
+}
+.converter__currency__result {
+  font-size: 30px;
+}
+
 .badge {
   display: inline-block;
   font-size: 14px;
