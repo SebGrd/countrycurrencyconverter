@@ -201,6 +201,35 @@ body {
   font-size: 30px;
 }
 
+.default-currencies__currency {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.default-currencies__currency__title {
+  margin: 0;
+}
+.default-currencies__currency__name {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #859898;
+}
+.default-currencies__currency__button {
+  padding: 6px 12px;
+  background: none;
+  border: 2px solid #3e4451;
+  border-radius: 20px;
+  color: #d8dede;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 150ms ease-in-out;
+}
+.default-currencies__currency__button:hover {
+  background: #9547ea;
+  border-color: #9547ea;
+}
+
 .badge {
   display: inline-block;
   font-size: 14px;

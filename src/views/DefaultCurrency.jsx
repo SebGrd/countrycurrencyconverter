@@ -2,16 +2,18 @@ import React, {useEffect, useState} from 'react';
 
 function Currency({code, name}) {
     const setDefaultCurrency = (code) => {
-        console.log(code)
         localStorage.setItem('currency', code)
+        alert('Default currency set!')
     }
 
     return (
-        <article className="default-currencies">
-            <h1 className="default-currencies__title">{code}</h1>
-            <h2 className="default-currencies__name">{name}</h2>
-            <button className="default-currencies__button" onClick={() => setDefaultCurrency(code)}>Select</button>
-        </article>
+        <div className="col col-12 col-md-6">
+            <article className="default-currencies__currency">
+                <h1 className="default-currencies__currency__title">{code}</h1>
+                <h2 className="default-currencies__currency__name">{name}</h2>
+                <button className="default-currencies__currency__button" onClick={() => setDefaultCurrency(code)}>Select</button>
+            </article>
+        </div>
     )
 }
 
@@ -32,7 +34,11 @@ export default function DefaultCurrency() {
         <div className="container">
             <h1>Default currency</h1>
             <p>Choose the default currency that will be used by default when you will convert currencies.</p>
-            { currenciesList.map(currency => <Currency key={currency[0]} code={currency[0]} name={currency[1][0]}/>) }
+            <section className="default-currencies">
+                <div className="row">
+                    { currenciesList.map(currency => <Currency key={currency[0]} code={currency[0]} name={currency[1].currencyName}/>) }
+                </div>
+            </section>
         </div>
     )
 }

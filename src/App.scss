@@ -235,6 +235,38 @@ body {
     }
   }
 }
+
+.default-currencies{
+  &__currency{
+    text-align: center;
+    margin-bottom: 40px;
+    &__title{
+      margin: 0;
+    }
+    &__name{
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      color: darken($text-light, 30%);
+    }
+    &__button{
+      padding: 6px 12px;
+      background: none;
+      border: 2px solid $light-dark;
+      border-radius: 20px;
+      color: $text-light;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      transition: all 150ms ease-in-out;
+      &:hover{
+        background: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+}
+
 // Utils
 .badge{
   display: inline-block;
