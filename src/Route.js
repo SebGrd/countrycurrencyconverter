@@ -3,6 +3,7 @@ import React from 'react'
 import Home from "./views/Home";
 import CountryList from "./views/CountryList";
 import Country from "./views/Country";
+import DefaultCurrency from "./views/DefaultCurrency";
 import NotFound from "./views/404"
 
 export default function getView() {
@@ -16,6 +17,8 @@ export default function getView() {
             return <Home/>
         case '/country-list':
             return <CountryList/>
+        case '/default-currency':
+            return <DefaultCurrency/>
         default:
             return <NotFound/>
     }
