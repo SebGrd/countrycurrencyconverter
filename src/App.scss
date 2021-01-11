@@ -17,7 +17,23 @@ $breakpoints: (
         "xl": $xl
 ) !default;
 
-
+@mixin button {
+  padding: 6px 12px;
+  background: none;
+  border: 2px solid $light-dark;
+  border-radius: 20px;
+  color: $text-light;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  transition: all 150ms ease-in-out;
+  &:hover {
+    background: $primary;
+    border-color: $primary;
+  }
+}
 
 body {
   background-color: #282c34;
@@ -27,33 +43,39 @@ body {
 }
 
 // Header
-#header{
+#header {
   padding-top: 8px;
   padding-bottom: 8px;
-  .header-wrapper{
+
+  .header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid $primary;
-    .header{
-      &__menu{
+
+    .header {
+      &__menu {
         display: flex;
         list-style: none;
         padding: 0;
         margin: 0;
-        &__item{
+
+        &__item {
           margin-left: 15px;
-          &__link{
+
+          &__link {
             color: $text-light;
             text-decoration: none;
-            &.active{
+
+            &.active {
               color: $primary;
               font-weight: 600;
             }
           }
         }
       }
-      &__title{
+
+      &__title {
         font-size: 26px;
         margin: 0;
         text-transform: uppercase;
@@ -63,15 +85,17 @@ body {
 }
 
 // Country List
-.country-list{
-  &__header{
+.country-list {
+  &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &__title{
+
+    &__title {
       font-size: 24px;
     }
-    &__input{
+
+    &__input {
       padding: 4px 8px;
       height: 30px;
       width: 200px;
@@ -82,43 +106,50 @@ body {
   }
 }
 
-.country-card{
+.country-card {
   margin-bottom: 40px;
   border-bottom: 1px solid $light-dark;
-  &__link{
+
+  &__link {
     display: block;
     padding-bottom: 8px;
     color: $text-light;
     text-decoration: none;
     transition: all 200ms ease-in-out;
-    &:hover{
+
+    &:hover {
       background: lighten($bg-color, 5%);
     }
   }
-  &__img-wrapper{
+
+  &__img-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     background: $light-dark;
     height: 115px;
-    &__img{
+
+    &__img {
       max-width: 100%;
       max-height: 100%;
       height: auto;
     }
   }
-  &__title{
+
+  &__title {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 4px;
     margin-top: 6px;
     text-align: center;
   }
-  &__badges{
+
+  &__badges {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    &__badge{
+
+    &__badge {
       display: inline-block;
       font-size: 14px;
       background: $light-dark;
@@ -129,19 +160,22 @@ body {
   }
 }
 
-.country{
-  &__header{
+.country {
+  &__header {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    &__title{
+
+    &__title {
       margin-top: 0;
-      &__name{
+
+      &__name {
         position: relative;
         font-size: 50px;
         font-weight: 600;
-        &:after{
+
+        &:after {
           position: absolute;
           content: "";
           left: 0;
@@ -152,16 +186,19 @@ body {
           background: linear-gradient(to right, white 50%, $bg-color);
         }
       }
-      &__info{
+
+      &__info {
         margin-left: 30px;
         font-size: 18px;
+
         > * {
           font-weight: 400;
           margin-right: 15px;
         }
       }
     }
-    &__flag-wrapper{
+
+    &__flag-wrapper {
       position: fixed;
       top: 0;
       right: 0;
@@ -169,7 +206,8 @@ body {
       z-index: -4;
       max-width: 70vw;
       pointer-events: none;
-      &:before{
+
+      &:before {
         position: absolute;
         content: '';
         top: 0;
@@ -179,7 +217,8 @@ body {
         background: linear-gradient(90deg, $bg-color 10%, transparent);
         z-index: 1;
       }
-      img{
+
+      img {
         position: relative;
         display: inline-block;
         height: 100%;
@@ -189,28 +228,33 @@ body {
   }
 }
 
-.converter{
+.converter {
   margin-bottom: 50px;
   border-left: 6px solid $primary;
   padding-left: 15px;
-  &__title{
+
+  &__title {
     font-size: 35px;
   }
-  &__currency{
-    &__title{
-      &__arrow{
+
+  &__currency {
+    &__title {
+      &__arrow {
         margin: 0 6px;
         font-size: 20px;
       }
     }
-    &__wrapper{
+
+    &__wrapper {
       display: flex;
       align-items: center;
     }
-    &__input{
-      &__code{
+
+    &__input {
+      &__code {
         font-weight: 600;
       }
+
       &__input {
         margin-right: 4px;
         padding: 4px 8px;
@@ -221,54 +265,78 @@ body {
         border: 2px solid $light-dark;
         border-radius: 15px;
         outline: none;
-        &:active, &:focus{
+
+        &:active, &:focus {
           border-color: $primary;
         }
       }
     }
-    &__arrow{
+
+    &__arrow {
       font-size: 30px;
       margin: 0 10px;
     }
-    &__result{
+
+    &__result {
       font-size: 30px;
     }
   }
 }
 
-.default-currencies{
-  &__currency{
+.default-currencies {
+  &__currency {
     text-align: center;
     margin-bottom: 40px;
-    &__title{
+
+    &__title {
       margin: 0;
     }
-    &__name{
+
+    &__name {
       margin: 0 0 8px 0;
       font-size: 16px;
       color: darken($text-light, 30%);
     }
-    &__button{
-      padding: 6px 12px;
-      background: none;
-      border: 2px solid $light-dark;
-      border-radius: 20px;
-      color: $text-light;
-      text-transform: uppercase;
-      font-weight: 600;
-      cursor: pointer;
-      outline: none;
-      transition: all 150ms ease-in-out;
-      &:hover{
+
+    &__button {
+      @include button;
+    }
+  }
+}
+
+.resume {
+  &__title {
+    font-size: 40px;
+    span {
+      &:last-child {
         background: $primary;
-        border-color: $primary;
       }
+    }
+  }
+}
+
+.apis-resume {
+  &__resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    height: 300px;
+    border-bottom: 1px solid $primary;
+    padding-bottom: 15px;
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__button {
+      @include button;
     }
   }
 }
 
 // Utils
-.badge{
+.badge {
   display: inline-block;
   font-size: 14px;
   background: $light-dark;
